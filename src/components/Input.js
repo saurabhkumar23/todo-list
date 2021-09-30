@@ -13,7 +13,7 @@ const Input = (props) => {
 
     return (
         <div className='input-container'>
-            <input value={item} onChange={(e) => setItem(e.target.value)}/>
+            <input value={item} onChange={ (e) => setItem(e.target.value)}/>
             <button onClick={itemAddHandler}>+</button>
         </div>
     )
