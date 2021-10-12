@@ -1,21 +1,20 @@
 import React from 'react'
+import {todoContext} from './Main'
 
 const Item = (props) => {
 
-    const {item,list,setList,id} = props
+    const todocontext = React.useContext(todoContext)
+    const {dispatch} = todocontext
+    const {item,id} = props
 
     const deleteItem = (id) => {
-        let updatedList = list.filter((item,index) => {
-            return id !== index
-        })
-        console.log(updatedList)
-        setList(updatedList)
+        dispatch({type:'DEL_TODO',id})
     }
 
     return (
         <div className='item'>
             <h1>{item}</h1>
-            <button onClick={() => deleteItem(id)}>delete</button>
+            <button onClick={() => deleteItem(id)}>x</button>
         </div>
     )
 }

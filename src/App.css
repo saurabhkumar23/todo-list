@@ -3,14 +3,19 @@
     box-sizing: border-box;
 }
 
+body{
+    background: #1abc9c;
+}
+
 .app-container{
-    border: 1px solid;
-    width: 400px;
+    width: 800px;
     margin: 0 auto;
     text-align: center;
-    margin-top: 150px;
+    margin-top: 70px;
     min-height: 350px;
     padding: 20px;
+    background: #fff;
+    box-shadow: 0 3px 5px rgb(0 0 0 / 10%);
 }
 
 .input-container{
@@ -19,23 +24,54 @@
 
 input{
     width: 90%;
-    font-size: 2em;
+    font-size: 1em;
     outline: none;
+    border: 2px solid #16a085;
+    box-shadow: 0 3px 5px rgb(0 0 0 / 10%);
+    padding: 10px;
 }
 
 button{
     flex: 1;
     cursor: pointer;
+    margin-left: 10px;
+    background-color: #16a085;
+    border: none;
+    color: white;
+    font-weight: bold;
 }
 
 .item{
     text-align: left;
-    border-bottom: 1px solid;
     display: flex;
-    margin: 10px 0;
+    margin: 25px 0;
+    align-items: center;
+    color: #16a085;
 }
 
 .item h1{
     width: 100%;
     overflow: auto;
+}
+.heading{
+    font-family: 'Pacifico', cursive;
+    color: #1abc9c;
+    text-align: left;
+    margin: 35px 0;
+}
+
+.lists-container{
+    margin-top: 30px;
+    border-top: 2px solid #cfcbcb;
+}
+
+.item button{
+    background-color: #f32121;
+    height: fit-content;
+    border-radius: 50%;
+    transition: all 0.2s ease-in-out;
+}
+
+.item button:hover{
+    transform: scale(1.4);
 }

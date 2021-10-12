@@ -1,20 +1,23 @@
-import React from 'react'
+import React,{useState} from 'react'
+import {todoContext} from './Main'
 
-const Input = (props) => {
+const Input = () => {
 
-    const {item,setItem,list,setList} = props
+    const todocontext = React.useContext(todoContext)
+    const {dispatch} = todocontext
+    const [todo, setTodo] = useState('')
 
     const itemAddHandler = () => {
-        if(item && item.trim() !== ''){
-            setList([...list,item])
+        if(todo && todo.trim() !== ''){
+            dispatch({type : 'ADD_TODO','item' : todo})
         }
-        setItem('')
+        setTodo('')
     }
 
     return (
         <div className='input-container'>
-            <input value={item} onChange={ (e) => setItem(e.target.value)}/>
-            <button onClick={itemAddHandler}>+</button>
+            <input value={todo} onChange={ (e) => setTodo(e.target.value)}  placeholder='Task'/>
+            <button onClick={itemAddHandler}>ADD</button>
         </div>
     )
 }
